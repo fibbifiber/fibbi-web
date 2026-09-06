@@ -106,7 +106,6 @@ export default function Home() {
             5g a serve, no lecture.
           </p>
           <div className="cta-row">
-            <span className="stock-line"><Icon name="bolt" size="1em" /> batch 001 · launching soon</span>
             <Link className="btn btn-primary" to="/shop">Shop the Range · From ₹99</Link>
           </div>
           <PinCheck />
