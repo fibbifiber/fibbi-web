@@ -69,7 +69,7 @@ export function CartProvider({ children }) {
     setTimeout(() => {
       setPanel('oos');
       trackEvent('oos_shown', { subtotal });
-    }, 1400);
+    }, 2800);
   };
 
   const value = {
