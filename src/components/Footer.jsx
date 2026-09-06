@@ -28,8 +28,7 @@ export default function Footer() {
           <Link to="/science">Nutrition &amp; Ingredients</Link>
           <div className="foot-legal">
             fibbi · made in pune<br />
-            Baner, Pune 411045, MH<br />
-            care@fibbi.in · +91 90000 00000
+            fibbi.fiber@gmail.com · +91 9467582433
           </div>
         </div>
       </div>

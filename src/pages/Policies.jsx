@@ -42,7 +42,7 @@ export default function Policies() {
             <div className="policy-card reveal" data-delay="1">
               <h4><Icon name="headset" size="1em" /> Contact &amp; grievances</h4>
               <ul>
-                <li>Email: care@fibbi.in · WhatsApp: +91 90000 00000 (10am–7pm IST, Mon–Sat).</li>
+                <li>Email: fibbi.fiber@gmail.com · WhatsApp: +91 9467582433 (10am–7pm IST, Mon–Sat).</li>
                 <li>We are based in Pune, Maharashtra.</li>
                 <li>Every complaint gets a human reply within 48 working hours.</li>
                 <li>Disclaimer: psyllium is a food, not a medicine. No disease claims, ever.</li>
