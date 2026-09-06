@@ -76,7 +76,7 @@ export default function Journal() {
           <div className="wrap">
             <h2 className="sec-title">That one got eaten.</h2>
             <p className="lead" style={{ marginBottom: 24 }}>We couldn't find this entry.</p>
-            <Link className="btn btn-primary" to="/journal">back to the journal</Link>
+            <Link className="btn btn-primary" to="/journal">Back to the Journal</Link>
           </div>
         </section>
       </div>
@@ -88,7 +88,7 @@ export default function Journal() {
       <div className="page active" ref={ref}>
         <section>
           <div className="wrap jr-article">
-            <Link className="jr-back" to="/journal">← the journal</Link>
+            <Link className="jr-back" to="/journal">← The Journal</Link>
             <span className="jr-tag">{post.tag}</span>
             <h1 className="jr-title">{post.title}</h1>
             <p className="jr-meta">{post.date} · {post.read} read</p>
@@ -98,7 +98,7 @@ export default function Journal() {
               <p className="lead" style={{ marginBottom: 18 }}>
                 Reading about fiber is the easy part. <b style={{ color: 'var(--ink)' }}>Grams are the hard part.</b>
               </p>
-              <Link className="btn btn-primary" to="/shop">shop the range</Link>
+              <Link className="btn btn-primary" to="/shop">Shop the Range</Link>
             </div>
           </div>
         </section>

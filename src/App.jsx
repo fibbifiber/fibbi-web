@@ -13,6 +13,7 @@ import Home from './pages/Home';
 import Journal from './pages/Journal'; // POSTS is shared with seo.js + Home, so this can't split
 
 const Shop = lazy(() => import('./pages/Shop'));
+const Product = lazy(() => import('./pages/Product'));
 const Science = lazy(() => import('./pages/Science'));
 const Story = lazy(() => import('./pages/Story'));
 const Play = lazy(() => import('./pages/Play'));
@@ -47,6 +48,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/shop/:sku" element={<Product />} />
             <Route path="/journal" element={<Journal />} />
             <Route path="/journal/:slug" element={<Journal />} />
             <Route path="/science" element={<Science />} />

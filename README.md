@@ -44,6 +44,9 @@ npm i -g vercel && vercel
 ```
 
 - Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` as environment variables in the Vercel project.
+- Add `IG_TOKEN` (no `VITE_` prefix) to power the live Instagram strip on the homepage — `api/instagram.js` proxies
+  the Graph API so the token never reaches the browser. Token lasts 60 days; refresh it via
+  `graph.instagram.com/refresh_access_token`. Leave it unset and the section hides itself.
 - `vercel.json` already rewrites all routes to `index.html` (SPA).
 - Point a real domain at it before running ads — in-app browsers show the URL bar.
 

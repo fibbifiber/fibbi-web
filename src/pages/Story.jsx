@@ -23,8 +23,8 @@ export default function Story() {
             <div className="tl reveal" data-delay="2"><span className="yr">up next</span><h4>Batch 001: 500 pouches</h4><p>Crunch will ship pan-India first. Cups follow on quick commerce in Pune &amp; Mumbai. The launch list gets founder pricing.</p></div>
           </div>
           <div className="cta-row" style={{ marginTop: 40 }}>
-            <Link className="btn btn-primary" to="/shop">shop the drop</Link>
-            <Link className="btn" to="/science">read the science</Link>
+            <Link className="btn btn-primary" to="/shop">Shop the Drop</Link>
+            <Link className="btn" to="/science">Read the Science</Link>
           </div>
         </div>
       </section>

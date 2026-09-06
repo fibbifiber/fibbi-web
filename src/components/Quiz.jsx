@@ -23,7 +23,7 @@ export default function Quiz() {
   return (
     <div className="quiz-card reveal" style={{ color: 'var(--ink)' }}>
       <span className="tape" aria-hidden="true"></span>
-      <h3>your 30-second fiber gap check <Icon name="search" /></h3>
+      <h3>Your 30-Second Fiber Gap Check <Icon name="search" /></h3>
       <p className="q-sub">three taps, no email, brutally honest math.</p>
       {QUESTIONS.map((q) => (
         <div className="q-block" key={q.key}>
@@ -56,7 +56,7 @@ export default function Quiz() {
               <>that's your estimated shortfall <b>today alone</b>. one crunch serve (5g) closes <b>~{pct}%</b> of it — on your dahi, in 10 seconds. <Icon name="bowl" /></>
             )}
           </p>
-          <AddButton id="crunch-berry-200" className="btn btn-primary">close 5g now · ₹249</AddButton>
+          <AddButton id="crunch-berry-200" className="btn btn-primary">Close 5g Now · ₹249</AddButton>
         </div>
       )}
     </div>

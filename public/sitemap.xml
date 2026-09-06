@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://fibbi.in/</loc><priority>1.0</priority></url>
   <url><loc>https://fibbi.in/shop</loc><priority>0.9</priority></url>
+  <url><loc>https://fibbi.in/shop/crunch-berry-200</loc><priority>0.8</priority></url>
+  <url><loc>https://fibbi.in/shop/crunch-coffee-200</loc><priority>0.8</priority></url>
+  <url><loc>https://fibbi.in/shop/crunch-cocoa-200</loc><priority>0.8</priority></url>
+  <url><loc>https://fibbi.in/shop/crunch-vanilla-200</loc><priority>0.8</priority></url>
+  <url><loc>https://fibbi.in/shop/og-jar-200</loc><priority>0.8</priority></url>
+  <url><loc>https://fibbi.in/shop/og-sticks-30</loc><priority>0.8</priority></url>
+  <url><loc>https://fibbi.in/shop/cup-berry</loc><priority>0.8</priority></url>
+  <url><loc>https://fibbi.in/shop/cup-coffee</loc><priority>0.8</priority></url>
+  <url><loc>https://fibbi.in/shop/cup-cocoa</loc><priority>0.8</priority></url>
+  <url><loc>https://fibbi.in/shop/cup-vanilla</loc><priority>0.8</priority></url>
   <url><loc>https://fibbi.in/science</loc><priority>0.8</priority></url>
   <url><loc>https://fibbi.in/story</loc><priority>0.7</priority></url>
   <url><loc>https://fibbi.in/journal</loc><priority>0.6</priority></url>

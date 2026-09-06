@@ -8,6 +8,7 @@ import Marquee from '../components/Marquee';
 import TrustStrip from '../components/TrustStrip';
 import Quiz from '../components/Quiz';
 import Testimonials from '../components/Testimonials';
+// import InstaFeed from '../components/InstaFeed';  // re-enable once IG_TOKEN is set
 import { POSTS } from './Journal';
 
 const METRO_PREFIX = ['11', '12', '20', '40', '41', '56', '60', '50', '70', '38', '30'];
@@ -29,7 +30,7 @@ function PinCheck() {
 
   return (
     <div className="pin-check">
-      <span style={{ fontWeight: 700, fontSize: 13.5 }}><Icon name="pin" size="1.05em" /> check delivery:</span>
+        <span style={{ fontWeight: 700, fontSize: 13.5 }}><Icon name="pin" size="1.05em" /> Check Delivery:</span>
       <input
         type="text"
         inputMode="numeric"
@@ -40,7 +41,7 @@ function PinCheck() {
         onChange={(e) => setPin(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && check()}
       />
-      <button className="pin-go" onClick={check}>check</button>
+      <button className="pin-go" onClick={check}>Check</button>
       <span className={`pin-msg${msg.ok ? ' ok' : ''}`}>{msg.text}</span>
     </div>
   );
@@ -79,7 +80,7 @@ function Waitlist() {
             onKeyDown={(e) => e.key === 'Enter' && submit()}
           />
           <button className="btn btn-dark" onClick={submit} disabled={busy || done}>
-            {done ? <><Icon name="check" size="1em" /> added</> : busy ? 'saving…' : 'get on the list'}
+            {done ? <><Icon name="check" size="1em" /> Added</> : busy ? 'Saving…' : 'Get on the List'}
           </button>
         </div>
         {done && <p className="wl-done" style={{ display: 'block' }}>you're in — first parcel has your name on it <Icon name="check" size="1em" /></p>}
@@ -106,7 +107,7 @@ export default function Home() {
           </p>
           <div className="cta-row">
             <span className="stock-line"><Icon name="bolt" size="1em" /> batch 001 · launching soon</span>
-            <Link className="btn btn-primary" to="/shop">shop the range · from ₹99</Link>
+            <Link className="btn btn-primary" to="/shop">Shop the Range · From ₹99</Link>
           </div>
           <PinCheck />
           <div className="hero-meta">
@@ -130,7 +131,7 @@ export default function Home() {
               <span className="kicker lime">shop <Icon name="cart" size="1em" /></span>
               <h2 className="sec-title" style={{ marginBottom: 0 }}>Pick your format.</h2>
             </div>
-            <Link className="btn btn-sm" to="/shop">see all 10 →</Link>
+            <Link className="btn btn-sm" to="/shop">See All 10 →</Link>
           </div>
           <p className="lead reveal">
             Same 5g dose, three ways to take it. Start where your routine already is.
@@ -140,7 +141,7 @@ export default function Home() {
               <span className="tape" aria-hidden="true"></span>
               <img className="lc-img" src="/the-crunch.webp" alt="fibbi crunch" loading="lazy" decoding="async" />
               <span className="lc-tag"><Icon name="star" size="1em" /> snack it</span>
-              <h3>fibbi crunch</h3>
+              <h3>Fibbi Crunch</h3>
               <p>Oat-psyllium clusters that snack like granola. Eat them dry, or over dahi.</p>
               <span className="lc-price">from ₹249 →</span>
             </Link>
@@ -148,7 +149,7 @@ export default function Home() {
               <span className="tape gold" aria-hidden="true"></span>
               <img className="lc-img" src="/the-og.webp" alt="fibbi og" loading="lazy" decoding="async" />
               <span className="lc-tag">stir it</span>
-              <h3>fibbi og</h3>
+              <h3>Fibbi OG</h3>
               <p>Our husk blend — micro-cut psyllium + prebiotic acacia. Stirs clean into anything.</p>
               <span className="lc-price">from ₹399 →</span>
             </Link>
@@ -156,7 +157,7 @@ export default function Home() {
               <span className="tape pink" aria-hidden="true"></span>
               <img className="lc-img" src="/the-cup.webp" alt="fibbi cups" loading="lazy" decoding="async" />
               <span className="lc-tag">spoon it</span>
-              <h3>fibbi cups</h3>
+              <h3>Fibbi Cups</h3>
               <p>Twist-top dahi cups with a crunch topper. Nothing to prepare.</p>
               <span className="lc-price">from ₹99 →</span>
             </Link>
@@ -193,7 +194,7 @@ export default function Home() {
               <span className="kicker">the journal</span>
               <h2 className="sec-title" style={{ marginBottom: 0 }}>Fiber, explained.</h2>
             </div>
-            <Link className="btn btn-sm" to="/journal">read all →</Link>
+            <Link className="btn btn-sm" to="/journal">Read All →</Link>
           </div>
           <div className="jr-grid">
             {POSTS.map((p, i) => (
@@ -207,6 +208,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* <InstaFeed /> */}
 
       <Waitlist />
     </div>

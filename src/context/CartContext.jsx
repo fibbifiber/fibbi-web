@@ -14,7 +14,7 @@ export function CartProvider({ children }) {
     }
   });
   const [open, setOpen] = useState(false);
-  const [panel, setPanel] = useState('cart'); // 'cart' | 'checking' | 'oos'
+  const [panel, setPanel] = useState('cart'); // 'cart' | 'contact' | 'checking' | 'oos'
 
   useEffect(() => {
     localStorage.setItem(LS_KEY, JSON.stringify(items));
@@ -61,6 +61,10 @@ export function CartProvider({ children }) {
       subtotal,
       items: items.map((i) => ({ sku: i.id, qty: i.qty })),
     });
+    setPanel('contact');
+  };
+
+  const runStockCheck = () => {
     setPanel('checking');
     setTimeout(() => {
       setPanel('oos');
@@ -80,6 +84,7 @@ export function CartProvider({ children }) {
     openCart,
     closeCart,
     checkout,
+    runStockCheck,
     backToCart: () => setPanel('cart'),
   };
 

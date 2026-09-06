@@ -4,12 +4,12 @@ import { useCart } from '../context/CartContext';
 import Icon from './Icon';
 
 const links = [
-  ['/', 'home'],
-  ['/shop', 'shop'],
-  ['/journal', 'journal'],
-  ['/science', 'the science'],
-  ['/story', 'our story'],
-  ['/play', 'play'],
+  ['/', 'Home'],
+  ['/shop', 'Shop'],
+  ['/journal', 'Journal'],
+  ['/science', 'The Science'],
+  ['/story', 'Our Story'],
+  ['/play', 'Play'],
 ];
 
 export default function Topbar() {
@@ -39,7 +39,7 @@ export default function Topbar() {
         </nav>
         <div className="top-actions">
           <button className="cart-btn" onClick={openCart}>
-            <Icon name="cart" size="1.05em" /> cart
+            <Icon name="cart" size="1.05em" /> Cart
             {count > 0 && (
               <span key={count} className="cart-count bump" style={{ display: 'flex' }}>
                 {count}
@@ -47,7 +47,7 @@ export default function Topbar() {
             )}
           </button>
           <Link className="btn btn-primary btn-sm" to="/shop">
-            shop
+            Shop
           </Link>
           <button
             className={`burger${open ? ' open' : ''}`}
@@ -76,7 +76,7 @@ export default function Topbar() {
         </nav>
         <div className="m-menu-foot">
           <Link className="btn btn-primary" to="/shop" tabIndex={open ? 0 : -1}>
-            shop the range
+            Shop the Range
           </Link>
           <span className="m-menu-note">free shipping above ₹499 · COD available</span>
         </div>

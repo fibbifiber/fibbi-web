@@ -181,7 +181,7 @@ export default function Game() {
     <div className="game-card">
       <span className="tape" aria-hidden="true"></span>
       <div className="game-head">
-        <h3>catch clusters · dodge sugar</h3>
+        <h3>Catch Clusters · Dodge Sugar</h3>
         <span className="game-best">best: {best}g</span>
       </div>
       <div className={`arena${phase !== 'running' ? ' idle' : ''}`} ref={arenaRef}>
@@ -197,7 +197,7 @@ export default function Game() {
           <div className="overlay">
             <h4>Ready to fibermaxx?</h4>
             <p>Move the cup with your mouse, finger, or ← → keys. Clusters +1g. Sugar −2g. 30 seconds on the clock.</p>
-            <button className="btn btn-dark" onClick={start}>start</button>
+            <button className="btn btn-dark" onClick={start}>Start</button>
           </div>
         )}
         {phase === 'end' && (
@@ -205,7 +205,7 @@ export default function Game() {
             <h4>Time's up.</h4>
             <p>You caught {finalScore}g of fiber{finalScore >= 25 ? ' — daily goal, maxxed.' : '.'}</p>
             <span className="tier">{tierFor(finalScore)}</span>
-            <button className="btn btn-dark" onClick={start}>run it back ↻</button>
+            <button className="btn btn-dark" onClick={start}>Run It Back ↻</button>
           </div>
         )}
       </div>

@@ -2,28 +2,50 @@ import { CATALOG } from './catalog.js';
 
 export const SITE = 'https://fibbi.in';
 
+export const productUrl = (sku) => `${SITE}/shop/${sku}`;
+
+export function productLd(sku, p) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: `fibbi ${p.title}`,
+    sku,
+    description: p.long,
+    image: SITE + p.img,
+    brand: { '@type': 'Brand', name: 'fibbi' },
+    offers: {
+      '@type': 'Offer',
+      url: productUrl(sku),
+      price: p.price,
+      priceCurrency: 'INR',
+      availability: 'https://schema.org/InStock',
+    },
+  };
+}
+
 export const SHOP_LD = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   itemListElement: Object.entries(CATALOG).map(([sku, p], i) => ({
     '@type': 'ListItem',
     position: i + 1,
-    item: {
-      '@type': 'Product',
-      name: `fibbi ${p.name}`,
-      sku,
-      image: SITE + p.img,
-      brand: { '@type': 'Brand', name: 'fibbi' },
-      offers: {
-        '@type': 'Offer',
-        url: `${SITE}/shop`,
-        price: p.price,
-        priceCurrency: 'INR',
-        availability: 'https://schema.org/InStock',
-      },
-    },
+    url: productUrl(sku),
+    item: productLd(sku, p),
   })),
 };
+
+// One route per SKU — feeds useSEO, the build-time prerender and the sitemap.
+const PRODUCT_ROUTES = Object.fromEntries(
+  Object.entries(CATALOG).map(([sku, p]) => [
+    `/shop/${sku}`,
+    {
+      title: `fibbi ${p.title} — ₹${p.price} | buy online in India`,
+      desc: p.long,
+      type: 'product',
+      ld: productLd(sku, p),
+    },
+  ]),
+);
 
 export const ROUTES = {
   '/': {
@@ -55,4 +77,5 @@ export const ROUTES = {
     title: 'Shipping, returns & policies | fibbi',
     desc: 'Shipping timelines, returns, refunds and contact details for fibbi orders across India. Free shipping over ₹499, COD available, a human replies on WhatsApp 10am–7pm IST.',
   },
+  ...PRODUCT_ROUTES,
 };

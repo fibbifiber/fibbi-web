@@ -13,19 +13,19 @@ export default function Footer() {
         </div>
         <div>
           <h5>site</h5>
-          <Link to="/shop">shop</Link>
-          <Link to="/journal">journal</Link>
-          <Link to="/science">the science</Link>
-          <Link to="/story">our story</Link>
-          <Link to="/play">play</Link>
+          <Link to="/shop">Shop</Link>
+          <Link to="/journal">Journal</Link>
+          <Link to="/science">The Science</Link>
+          <Link to="/story">Our Story</Link>
+          <Link to="/play">Play</Link>
         </div>
         <div>
           <h5>the fine print</h5>
-          <Link to="/policies">shipping policy</Link>
-          <Link to="/policies">returns &amp; refunds</Link>
-          <Link to="/policies">payments</Link>
-          <Link to="/policies">contact &amp; grievances</Link>
-          <Link to="/science">nutrition &amp; ingredients</Link>
+          <Link to="/policies">Shipping Policy</Link>
+          <Link to="/policies">Returns &amp; Refunds</Link>
+          <Link to="/policies">Payments</Link>
+          <Link to="/policies">Contact &amp; Grievances</Link>
+          <Link to="/science">Nutrition &amp; Ingredients</Link>
           <div className="foot-legal">
             fibbi · made in pune<br />
             Baner, Pune 411045, MH<br />

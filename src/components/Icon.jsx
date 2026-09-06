@@ -169,6 +169,7 @@ const G = {
       <path d="M4 12h11a5 5 0 0 1 0 10h-2.5" />
     </>
   ),
+  play: { fill: 'var(--ink)', el: <path d="M8 5l11 7-11 7z" /> },
 };
 
 export default function Icon({ name, size = '1.05em', color, className, style }) {

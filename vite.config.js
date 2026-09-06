@@ -14,8 +14,11 @@ const NAV =
 function fallback(route, title, desc) {
   const products =
     route === '/shop'
-      ? `<ul>${Object.values(CATALOG)
-          .map((p) => `<li>fibbi ${esc(p.name)} — ₹${p.price} (MRP ₹${p.mrp})</li>`)
+      ? `<ul>${Object.entries(CATALOG)
+          .map(
+            ([sku, p]) =>
+              `<li><a href="/shop/${sku}">fibbi ${esc(p.title)}</a> — ₹${p.price} (MRP ₹${p.mrp})</li>`,
+          )
           .join('')}</ul>`
       : '';
   return `<noscript><h1>${esc(title)}</h1><p>${esc(desc)}</p>${products}${NAV}</noscript>`;

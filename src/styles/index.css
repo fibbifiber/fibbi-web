@@ -387,11 +387,13 @@
     font-family:'Space Mono';font-size:10px;letter-spacing:.12em;text-transform:uppercase;
     background:var(--lime);border:1.5px solid var(--ink);border-radius:999px;padding:4px 10px;transform:rotate(-2deg);
   }
-  .sku-visual{aspect-ratio:4/5;border-bottom:1.5px solid var(--ink);position:relative;overflow:hidden;border-radius:var(--r) var(--r) 0 0}
+  .sku-visual{aspect-ratio:4/5;border-bottom:1.5px solid var(--ink);position:relative;overflow:hidden;border-radius:var(--r) var(--r) 0 0;display:block}
   .sku-visual svg{position:absolute;inset:0;width:100%;height:100%}
   .sku-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
   .sku-body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
   .sku h4{font-size:var(--fs-lg)}
+  .sku-link{text-decoration:none}
+  .sku-link:hover{text-decoration:underline;text-underline-offset:3px}
   .sku .s-desc{font-size:var(--fs-base);color:var(--ink-60);font-weight:500;flex:1}
   .s-specs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px}
   .s-specs span{font-family:'Space Mono';font-size:10.5px;letter-spacing:.06em;border:1px solid var(--ink-12);border-radius:6px;padding:3px 8px;color:var(--ink-60)}
@@ -412,6 +414,55 @@
     padding:18px 22px;font-size:14.5px;color:var(--ink-60);max-width:760px;background:rgba(224,166,60,.06);
   }
   .og-note b{color:#A87520}
+
+  /* ================= PRODUCT PAGE ================= */
+  .crumbs{font-family:'Space Mono';font-size:11.5px;letter-spacing:.06em;color:var(--ink-60);margin-bottom:22px}
+  .crumbs a{text-decoration:none}
+  .crumbs a:hover{text-decoration:underline;text-underline-offset:3px}
+  .crumbs span[aria-hidden]{margin:0 2px;opacity:.5}
+  .pdp{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:42px;align-items:start}
+  @media(max-width:860px){.pdp{grid-template-columns:1fr;gap:26px}}
+  .pdp-visual{
+    position:relative;border:1.5px solid var(--ink);border-radius:var(--r);overflow:visible;
+    background:var(--white);box-shadow:5px 5px 0 var(--ink);
+  }
+  .pdp-visual .tape{top:-11px;left:50%;transform:translateX(-50%) rotate(-3deg);width:78px;height:21px}
+  .pdp-visual .badge{
+    position:absolute;top:12px;left:12px;z-index:3;
+    font-family:'Space Mono';font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    background:var(--lime);border:1.5px solid var(--ink);border-radius:999px;padding:4px 10px;transform:rotate(-2deg);
+  }
+  .pdp-visual img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:calc(var(--r) - 2px)}
+  .pdp-info{display:flex;flex-direction:column;gap:14px}
+  .pdp-info .sec-title{margin-bottom:0}
+  .pdp-info .lead{max-width:none}
+  .pdp-info .s-specs{margin:0}
+  .pdp-note{font-size:12px;color:var(--ink-60);letter-spacing:0}
+  .pdp-buy{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    border:1.5px solid var(--ink);border-radius:var(--r);background:var(--white);padding:16px 20px;
+  }
+  .pdp-price{font-size:26px;line-height:1.2}
+  .pdp-price .mrp{font-size:14px}
+  .pdp-off{font-family:'Space Mono';font-size:11px;color:var(--lime-deep);margin-left:9px}
+  .pdp-add{padding:13px 26px;font-size:var(--fs-base)}
+  .pdp-facts{list-style:none;display:grid;gap:8px;margin:2px 0 0}
+  .pdp-facts li{display:flex;align-items:center;gap:9px;font-size:14.5px;font-weight:500;color:var(--ink-60)}
+  .pdp-facts svg{color:var(--lime-deep);flex:none}
+  .pdp-nutri{border:1.5px solid var(--ink);border-radius:var(--r);background:var(--white);padding:14px 18px 13px}
+  .pn-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:2.5px solid var(--ink);padding-bottom:8px}
+  .pn-head h4{font-size:16px}
+  .pn-head span{font-family:'Space Mono';font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-60)}
+  .pn-rows{margin:0}
+  .pn-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.12)}
+  .pn-row:last-child{border-bottom:0}
+  .pn-row dt{font-size:14px;font-weight:500;color:var(--ink-60)}
+  .pn-row dd{margin:0;font-family:'Space Mono';font-size:13px;font-weight:700}
+  .pn-row.sub dt{padding-left:14px;font-size:13px}
+  .pn-row.hi dt,.pn-row.hi dd{color:var(--lime-deep);font-weight:800}
+  .pn-foot{font-family:'Space Mono';font-size:10.5px;line-height:1.5;letter-spacing:.04em;color:var(--ink-60);margin-top:10px}
+  .pdp-line-note{font-family:'Space Mono';font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-60)}
+  .pdp + .shop-line{margin-top:56px}
 
   /* ================= CART DRAWER ================= */
   .cart-backdrop{
@@ -435,7 +486,7 @@
     display:flex;align-items:center;gap:14px;border:1.5px solid var(--ink);border-radius:14px;
     background:var(--white);padding:12px 14px;margin-bottom:12px;
   }
-  .ci .ci-swatch{width:44px;height:44px;border-radius:10px;border:1.5px solid var(--ink);flex:none}
+  .ci .ci-swatch{width:44px;height:44px;border-radius:10px;border:1.5px solid var(--ink);flex:none;object-fit:cover}
   .ci .ci-info{flex:1;min-width:0}
   .ci .ci-name{font-weight:700;font-size:14px;line-height:1.3}
   .ci .ci-price{font-family:'Space Mono';font-size:12px;color:var(--ink-60)}
@@ -447,7 +498,7 @@
   .cd-checkout{width:100%;text-align:center}
   /* out of stock state */
   .oos{
-    text-align:center;padding:34px 22px;display:none;flex-direction:column;align-items:center;gap:10px;flex:1;justify-content:center;
+    text-align:center;padding:34px 22px;display:none;flex-direction:column;align-items:center;gap:10px;flex:1;justify-content:center;overflow-y:auto;
   }
   .oos.show{display:flex}
   .oos .oos-emo{font-size:52px}
@@ -680,6 +731,56 @@
     .ph{padding:8px 8px 10px}
     .ph-main{margin-top:12px}
     .ph-add{padding:7px 11px}
+  }
+
+  /* ---------- instagram ---------- */
+  .ig-tools{display:flex;align-items:center;gap:8px}
+  .ig-arrow{
+    width:38px;height:38px;border-radius:999px;background:var(--white);
+    border:1.5px solid var(--ink);font-size:var(--fs-base);line-height:1;
+    display:grid;place-items:center;transition:background .15s ease, transform .15s ease;
+  }
+  .ig-arrow:hover{background:var(--lime);transform:translateY(-2px)}
+  /* padding leaves room for the tape overhang and hover lift that overflow would otherwise clip */
+  .ig-rail{
+    display:flex;gap:22px;margin-top:34px;padding:16px 4px 24px;
+    overflow-x:auto;overscroll-behavior-x:contain;
+    scroll-snap-type:x mandatory;scroll-padding-left:4px;
+    scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .ig-rail::-webkit-scrollbar{display:none}
+  .ig-card{
+    position:relative;flex:0 0 clamp(214px,26vw,272px);scroll-snap-align:start;
+    display:flex;flex-direction:column;gap:10px;text-decoration:none;
+    background:var(--white);border:1.5px solid var(--ink);border-radius:var(--r);
+    padding:12px 12px 14px;transform:rotate(var(--rr,0deg));
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .ig-card:nth-child(3n+1){--rr:-1.1deg}
+  .ig-card:nth-child(3n+2){--rr:.8deg}
+  .ig-card:nth-child(3n+3){--rr:-.5deg}
+  .ig-card:hover{transform:translateY(-6px) rotate(0deg);box-shadow:0 16px 28px rgba(30,21,51,.14);z-index:2}
+  .ig-card .tape{top:-11px;left:50%;transform:translateX(-50%) rotate(-3deg);width:74px;height:20px}
+  .ig-shot{position:relative;display:block;aspect-ratio:1;overflow:hidden;border-radius:10px;background:var(--cream)}
+  .ig-shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .ig-card:hover .ig-shot img{transform:scale(1.05)}
+  .ig-play{
+    position:absolute;top:8px;right:8px;display:grid;place-items:center;
+    width:26px;height:26px;border-radius:999px;background:var(--white);border:1.5px solid var(--ink);
+  }
+  .ig-foot{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:0 2px}
+  .ig-cap{
+    font-size:var(--fs-xs);font-weight:600;color:var(--ink-60);line-height:1.45;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .ig-date{font-family:'Space Mono';font-size:var(--fs-3xs);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-60);white-space:nowrap;padding-top:2px}
+  .ig-follow{align-items:center;justify-content:center;text-align:center;gap:8px;background:var(--lime);padding:28px 20px}
+  .ig-follow .if-h{font-family:'Bricolage Grotesque';font-weight:800;font-size:var(--fs-lg)}
+  .ig-follow .if-s{font-family:'Space Mono';font-size:var(--fs-2xs);letter-spacing:.1em;text-transform:uppercase}
+  @media(max-width:640px){
+    .ig-arrow{display:none}
+    .ig-rail{gap:14px}
+    .ig-card{flex-basis:min(74vw,240px)}
   }
 
   /* ---------- journal ---------- */

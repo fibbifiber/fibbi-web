@@ -16,7 +16,7 @@ export default function AddButton({ id, className = 'add-btn', children }) {
 
   return (
     <button className={`${className}${added ? ' added' : ''}`} onClick={onClick}>
-      {added ? <><Icon name="check" size="1em" /> added</> : children}
+      {added ? <><Icon name="check" size="1em" /> Added</> : children}
     </button>
   );
 }

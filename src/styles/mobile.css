@@ -90,6 +90,16 @@
   .s-buy{flex-wrap:nowrap;align-items:center}
   .og-note{margin-top:18px;padding:16px 18px;font-size:13.5px}
 
+  /* ---------- product page ---------- */
+  .crumbs{margin-bottom:16px;font-size:10.5px}
+  .pdp-visual{box-shadow:3px 3px 0 var(--ink)}
+  .pdp-visual img{aspect-ratio:1/1}
+  .pdp-info{gap:12px}
+  .pdp-buy{padding:14px 16px;gap:12px}
+  .pdp-price{font-size:23px}
+  .pdp-facts li{font-size:13.5px}
+  .pdp + .shop-line{margin-top:34px}
+
   /* ---------- trust strip: 2×2 block, no sideways scroll ---------- */
   .trust-strip{display:grid;grid-template-columns:repeat(2,1fr)}
   .ts{flex-direction:column;gap:6px;padding:16px 10px;font-size:12px;white-space:normal;text-align:center}
