@@ -18,6 +18,7 @@ const Science = lazy(() => import('./pages/Science'));
 const Story = lazy(() => import('./pages/Story'));
 const Play = lazy(() => import('./pages/Play'));
 const Policies = lazy(() => import('./pages/Policies'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
 
 function PageViews() {
   const location = useLocation();
@@ -55,6 +56,7 @@ export default function App() {
             <Route path="/story" element={<Story />} />
             <Route path="/play" element={<Play />} />
             <Route path="/policies" element={<Policies />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </Suspense>
