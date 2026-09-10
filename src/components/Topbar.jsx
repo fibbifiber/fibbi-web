@@ -9,7 +9,6 @@ const links = [
   ['/journal', 'Journal'],
   ['/science', 'The Science'],
   ['/story', 'Our Story'],
-  ['/play', 'Play'],
 ];
 
 export default function Topbar() {
@@ -78,7 +77,7 @@ export default function Topbar() {
           <Link className="btn btn-primary" to="/shop" tabIndex={open ? 0 : -1}>
             Shop the Range
           </Link>
-          <span className="m-menu-note">free shipping above ₹499 · COD available</span>
+          <span className="m-menu-note">free shipping on every order · COD available</span>
         </div>
       </div>
     </>

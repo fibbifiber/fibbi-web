@@ -80,7 +80,7 @@ export const CATALOG = {
   'crunch-vanilla-200': {
     name: 'Crunch Vanilla · 200g', title: 'Crunch Vanilla — 200g', line: 'crunch',
     price: 269, mrp: 319, sw: '#EDE3C8', img: img('fibbi-crunch-vanilla.webp'),
-    badge: 'new', badgeTone: 'var(--lav)', per: 'the mellow one',
+    badge: 'new', badgeTone: 'var(--lime)', per: 'the mellow one',
     specs: ['200g', '6 serves', 'no added sugar'],
     desc: 'Madagascar vanilla clusters, gently sweetened with dates — the same topper as the vanilla dahi cup.',
     long: 'Madagascar vanilla baked into oat-psyllium clusters and gently sweetened with dates. The least loud flavour in the range — made for people who want fiber, not a dessert.',
@@ -144,7 +144,9 @@ export const CATALOG = {
 
 export const skusInLine = (line) => Object.keys(CATALOG).filter((id) => CATALOG[id].line === line);
 
-export const FREE_SHIP = 499;
+// 0 = free shipping on every order, no minimum. The cart's ship-progress bar
+// keys off this, so it now always reads as "unlocked".
+export const FREE_SHIP = 0;
 
 export const REVIEWS = [
   { stars: 5, tape: '',     text: 'badiya h dahi me daal ke roz kha rahi hu, crunch sach me last bite tak rehta hai', who: 'aditi · 24 · pune' },

@@ -3,7 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { useReveals } from '../lib/useReveals';
 import AddButton from '../components/AddButton';
 import Icon from '../components/Icon';
-import { CATALOG, LINES, skusInLine, FREE_SHIP } from '../data/catalog';
+import { CATALOG, LINES, skusInLine } from '../data/catalog';
 import { Sku } from './Shop';
 
 export default function Product() {
@@ -55,7 +55,7 @@ export default function Product() {
               </div>
 
               <p className="dispatch-line">
-                <Icon name="check" size="1em" /> dispatch in 24–48h · <Icon name="truck" size="1em" /> free shipping above ₹{FREE_SHIP} · <Icon name="money" size="1em" /> COD available (+₹49)
+                <Icon name="check" size="1em" /> dispatch in 24–48h · <Icon name="truck" size="1em" /> free shipping on every order · <Icon name="money" size="1em" /> COD available (+₹49)
               </p>
 
               <ul className="pdp-facts">

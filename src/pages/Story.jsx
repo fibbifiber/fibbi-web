@@ -20,7 +20,7 @@ export default function Story() {
           <div className="timeline">
             <div className="tl reveal"><span className="yr">the insight</span><h4>Fiber didn't need reinventing. The experience did.</h4><p>Texture, dose, and design were the three failures. We fixed all three.</p></div>
             <div className="tl reveal" data-delay="1"><span className="yr">the engineering</span><h4>No-slime, for real</h4><p>Months of cluster baking trials to make psyllium crunchy in a bowl and clean in a glass.</p></div>
-            <div className="tl reveal" data-delay="2"><span className="yr">up next</span><h4>Batch 001: 500 pouches</h4><p>Crunch will ship pan-India first. Cups follow on quick commerce in Pune &amp; Mumbai. The launch list gets founder pricing.</p></div>
+            <div className="tl reveal" data-delay="2"><span className="yr">up next</span><h4>Batch 002 opens next</h4><p>Batch 001 — 500 pouches — is fully allocated. Crunch ships pan-India first, cups follow on quick commerce in Pune &amp; Mumbai. Reserve from batch 002 and you get founder pricing.</p></div>
           </div>
           <div className="cta-row" style={{ marginTop: 40 }}>
             <Link className="btn btn-primary" to="/shop">Shop the Drop</Link>

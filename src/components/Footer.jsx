@@ -17,7 +17,6 @@ export default function Footer() {
           <Link to="/journal">Journal</Link>
           <Link to="/science">The Science</Link>
           <Link to="/story">Our Story</Link>
-          <Link to="/play">Play</Link>
         </div>
         <div>
           <h5>the fine print</h5>
@@ -27,16 +26,17 @@ export default function Footer() {
           <Link to="/policies">Contact &amp; Grievances</Link>
           <Link to="/science">Nutrition &amp; Ingredients</Link>
           <div className="foot-legal">
-            fibbi · made in pune<br />
+            Pune, Maharashtra, India<br />
             fibbi.fiber@gmail.com · +91 9467582433
           </div>
         </div>
       </div>
       <div className="foot-pay" aria-label="Accepted payment methods">
-        <span>UPI</span><span>GPay</span><span>PhonePe</span><span>Paytm</span><span>VISA</span><span>Mastercard</span><span>RuPay</span><span>Amex</span><span>NetBanking</span><span>COD</span><span><Icon name="lock" size="1em" /> SSL secure</span>
+        <span>UPI</span><span>Cards</span><span>NetBanking</span><span>COD</span><span><Icon name="lock" size="1em" /> SSL secure</span>
       </div>
       <div className="foot-fine">
-        © 2026 fibbi · psyllium is a food, not a medicine — we make no disease claims, just very regular ones. drink plenty of water with your fiber.
+        © 2026 Planstalk LLP · Pune, Maharashtra<br />
+        psyllium is a food, not a medicine — we make no disease claims, just very regular ones. drink plenty of water with your fiber.
       </div>
     </footer>
   );

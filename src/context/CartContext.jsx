@@ -14,7 +14,7 @@ export function CartProvider({ children }) {
     }
   });
   const [open, setOpen] = useState(false);
-  const [panel, setPanel] = useState('cart'); // 'cart' | 'contact' | 'checking' | 'oos'
+  const [panel, setPanel] = useState('cart'); // 'cart' | 'checking' | 'oos'
 
   useEffect(() => {
     localStorage.setItem(LS_KEY, JSON.stringify(items));
@@ -56,20 +56,29 @@ export function CartProvider({ children }) {
   };
   const closeCart = () => setOpen(false);
 
-  const checkout = () => {
-    trackEvent('checkout_attempt', {
-      subtotal,
-      items: items.map((i) => ({ sku: i.id, qty: i.qty })),
-    });
-    setPanel('contact');
-  };
-
   const runStockCheck = () => {
     setPanel('checking');
     setTimeout(() => {
       setPanel('oos');
       trackEvent('oos_shown', { subtotal });
-    }, 2800);
+    }, 1500);
+  };
+
+  /**
+   * Availability is checked BEFORE any contact details are requested.
+   *
+   * The earlier flow asked for email + phone first and only then revealed that
+   * batch 001 was allocated. Every real visitor who reached that form abandoned
+   * it: they clicked a button labelled checkout, were asked for a phone number,
+   * and had not yet been told nothing was purchasable. Showing availability
+   * first means the waitlist ask is an informed choice rather than a surprise.
+   */
+  const checkout = () => {
+    trackEvent('checkout_attempt', {
+      subtotal,
+      items: items.map((i) => ({ sku: i.id, qty: i.qty })),
+    });
+    runStockCheck();
   };
 
   const value = {

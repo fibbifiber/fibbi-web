@@ -16,7 +16,6 @@ const Shop = lazy(() => import('./pages/Shop'));
 const Product = lazy(() => import('./pages/Product'));
 const Science = lazy(() => import('./pages/Science'));
 const Story = lazy(() => import('./pages/Story'));
-const Play = lazy(() => import('./pages/Play'));
 const Policies = lazy(() => import('./pages/Policies'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 
@@ -54,7 +53,6 @@ export default function App() {
             <Route path="/journal/:slug" element={<Journal />} />
             <Route path="/science" element={<Science />} />
             <Route path="/story" element={<Story />} />
-            <Route path="/play" element={<Play />} />
             <Route path="/policies" element={<Policies />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<Home />} />

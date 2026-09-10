@@ -19,7 +19,7 @@ export default function Policies() {
                 <li>Pan-India delivery to most serviceable pincodes via trusted national courier partners.</li>
                 <li>Dispatch within 24–48 hours of order confirmation.</li>
                 <li>Metros: 2–4 business days · Rest of India: 4–7 business days.</li>
-                <li>Free shipping on orders ₹499+. Below that, ₹49 flat.</li>
+                <li>Free shipping on every order, pan-India — no minimum.</li>
                 <li>COD available pan-India (+₹49 handling).</li>
               </ul>
             </div>
@@ -46,6 +46,16 @@ export default function Policies() {
                 <li>We are based in Pune, Maharashtra.</li>
                 <li>Every complaint gets a human reply within 48 working hours.</li>
                 <li>Disclaimer: psyllium is a food, not a medicine. No disease claims, ever.</li>
+              </ul>
+            </div>
+
+            <div className="policy-card reveal">
+              <h4><Icon name="clipboard" size="1em" /> Who you're buying from</h4>
+              <ul>
+                <li>fibbi is a brand owned and operated by <b>Planstalk LLP</b>.</li>
+                <li>Registered office: Pune, Maharashtra, India.</li>
+                <li>Every pack carries its batch code, packing date, best-before date and the full ingredient list.</li>
+                <li>GST invoice issued with every order on request.</li>
               </ul>
             </div>
           </div>

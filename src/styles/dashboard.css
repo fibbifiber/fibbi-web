@@ -76,3 +76,8 @@
   .dash-bars li, .dash-funnel li { grid-template-columns: minmax(0, 1fr) 1fr auto; }
   .dash-stat-value { font-size: var(--fs-lg); }
 }
+
+/* The customer-facing palette retired --lav to a neutral tint. The internal
+   analytics dashboard still needs a distinct, legible chart colour, so it
+   restores a real lavender locally without reintroducing it site-wide. */
+.dash { --lav: #CDBFF5; }

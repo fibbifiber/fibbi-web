@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useReveals } from '../lib/useReveals';
 import { saveLead, trackEvent } from '../lib/supabase';
 import Icon from '../components/Icon';
-import CursorTrail from '../components/CursorTrail';
 import Marquee from '../components/Marquee';
 import TrustStrip from '../components/TrustStrip';
 import Quiz from '../components/Quiz';
@@ -49,13 +48,28 @@ function PinCheck() {
 
 function Waitlist() {
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [done, setDone] = useState(false);
   const [busy, setBusy] = useState(false);
 
+  // Same validation as the cart reservation form, so one list has one standard.
+  const mobile = phone.replace(/\D/g, '').slice(-10);
+  const emailOk = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(email.trim());
+  const phoneOk = /^[6-9]\d{9}$/.test(mobile);
+  const error = email.trim() && !emailOk
+    ? 'that email address looks incomplete'
+    : phone.trim() && !phoneOk
+      ? 'indian mobiles are 10 digits starting 6–9'
+      : '';
+  const canSubmit = emailOk && phoneOk && !error;
+
   const submit = async () => {
-    if (!email.includes('@')) return;
+    if (!canSubmit) return;
     setBusy(true);
-    const res = await saveLead(email, 'waitlist');
+    const res = await saveLead(email.trim(), 'waitlist', {
+      email: email.trim(),
+      phone: `+91${mobile}`,
+    });
     setBusy(false);
     if (res.ok) {
       setDone(true);
@@ -70,20 +84,38 @@ function Waitlist() {
         <p className="lead reveal">
           500 pouches, because that's all our bakery can do at once. The launch list gets first dibs and founder pricing when it's ready.
         </p>
-        <div className="wl-form reveal" data-delay="1">
-          <input
-            type="email"
-            placeholder="you@gmail.com"
-            aria-label="Email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && submit()}
-          />
-          <button className="btn btn-dark" onClick={submit} disabled={busy || done}>
-            {done ? <><Icon name="check" size="1em" /> Added</> : busy ? 'Saving…' : 'Get on the List'}
-          </button>
-        </div>
-        {done && <p className="wl-done" style={{ display: 'block' }}>you're in — first parcel has your name on it <Icon name="check" size="1em" /></p>}
+        {!done ? (
+          <>
+            <div className="wl-form reveal" data-delay="1">
+              <input
+                type="email"
+                autoComplete="email"
+                placeholder="you@gmail.com"
+                aria-label="Email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && canSubmit && submit()}
+              />
+              <input
+                type="tel"
+                inputMode="numeric"
+                autoComplete="tel"
+                maxLength={16}
+                placeholder="+91 98765 43210"
+                aria-label="Indian mobile number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && canSubmit && submit()}
+              />
+              <button className="btn btn-dark" onClick={submit} disabled={busy || !canSubmit}>
+                {busy ? 'Saving…' : 'Get on the List'}
+              </button>
+            </div>
+            {error && <p className="mono reveal" role="alert" style={{ fontSize: 11.5, color: 'var(--berry)', marginTop: 8 }}>{error}</p>}
+          </>
+        ) : (
+          <p className="wl-done" style={{ display: 'block' }}>you're in — first parcel has your name on it <Icon name="check" size="1em" /></p>
+        )}
       </div>
     </section>
   );
@@ -96,7 +128,6 @@ export default function Home() {
   return (
     <div className="page active" ref={ref}>
       <div className="hero">
-        <CursorTrail />
         <div>
           <h1>
             Fiber that <span className="u">snacks back.</span>
@@ -136,7 +167,16 @@ export default function Home() {
             Same 5g dose, three ways to take it. Start where your routine already is.
           </p>
           <div className="lines">
-            <Link className="line-card lc-crunch reveal" to="/shop#crunch">
+            {/* Cheapest entry point first — ₹99 is the lowest-friction way in. */}
+            <Link className="line-card lc-cups reveal" to="/shop#cups">
+              <span className="tape pink" aria-hidden="true"></span>
+              <img className="lc-img" src="/the-cup.webp" alt="fibbi cups" loading="lazy" decoding="async" />
+              <span className="lc-tag">spoon it</span>
+              <h3>Fibbi Cups</h3>
+              <p>Twist-top dahi cups with a crunch topper. Nothing to prepare.</p>
+              <span className="lc-price">from ₹99 →</span>
+            </Link>
+            <Link className="line-card lc-crunch reveal" data-delay="1" to="/shop#crunch">
               <span className="tape" aria-hidden="true"></span>
               <img className="lc-img" src="/the-crunch.webp" alt="fibbi crunch" loading="lazy" decoding="async" />
               <span className="lc-tag"><Icon name="star" size="1em" /> snack it</span>
@@ -144,21 +184,13 @@ export default function Home() {
               <p>Oat-psyllium clusters that snack like granola. Eat them dry, or over dahi.</p>
               <span className="lc-price">from ₹249 →</span>
             </Link>
-            <Link className="line-card lc-og reveal" data-delay="1" to="/shop#og">
+            <Link className="line-card lc-og reveal" data-delay="2" to="/shop#og">
               <span className="tape gold" aria-hidden="true"></span>
               <img className="lc-img" src="/the-og.webp" alt="fibbi og" loading="lazy" decoding="async" />
               <span className="lc-tag">stir it</span>
               <h3>Fibbi OG</h3>
               <p>Our husk blend — micro-cut psyllium + prebiotic acacia. Stirs clean into anything.</p>
               <span className="lc-price">from ₹399 →</span>
-            </Link>
-            <Link className="line-card lc-cups reveal" data-delay="2" to="/shop#cups">
-              <span className="tape pink" aria-hidden="true"></span>
-              <img className="lc-img" src="/the-cup.webp" alt="fibbi cups" loading="lazy" decoding="async" />
-              <span className="lc-tag">spoon it</span>
-              <h3>Fibbi Cups</h3>
-              <p>Twist-top dahi cups with a crunch topper. Nothing to prepare.</p>
-              <span className="lc-price">from ₹99 →</span>
             </Link>
           </div>
         </div>

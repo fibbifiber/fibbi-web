@@ -54,7 +54,7 @@ export const ROUTES = {
   },
   '/shop': {
     title: 'Shop fiber snacks — granola, jars, sticks & dahi cups | fibbi',
-    desc: 'Launch pricing for India. Crunch granola in berry, coffee, cocoa and vanilla, og psyllium jars and 6g sticks, plus ready-to-eat dahi cups. 5g psyllium per serve, zero added sugar, free shipping over ₹499.',
+    desc: 'Launch pricing for India. Crunch granola in berry, coffee, cocoa and vanilla, og psyllium jars and 6g sticks, plus ready-to-eat dahi cups. 5g psyllium per serve, zero added sugar, free shipping on every order.',
     ld: SHOP_LD,
   },
   '/science': {
@@ -69,13 +69,9 @@ export const ROUTES = {
     title: 'The fibbi journal — fiber, gut health and ingredients explained',
     desc: 'Notes on gut health, ingredients and the science we build on — written for people who want the reasoning, not the marketing.',
   },
-  '/play': {
-    title: 'The fibermaxxing game — catch clusters, dodge sugar | fibbi',
-    desc: 'Catch 30 seconds of fiber clusters, dodge the sugar cubes, screenshot your tier. 25g+ makes you a certified fibermaxxer.',
-  },
   '/policies': {
     title: 'Shipping, returns & policies | fibbi',
-    desc: 'Shipping timelines, returns, refunds and contact details for fibbi orders across India. Free shipping over ₹499, COD available, a human replies on WhatsApp 10am–7pm IST.',
+    desc: 'Shipping timelines, returns, refunds and contact details for fibbi orders across India. Free shipping on every order, COD available, a human replies on WhatsApp 10am–7pm IST.',
   },
   ...PRODUCT_ROUTES,
 };

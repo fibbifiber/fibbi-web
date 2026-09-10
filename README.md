@@ -52,11 +52,22 @@ npm i -g vercel && vercel
 
 ## 4 · Before spending on ads
 
-- [ ] Paste your **Meta Pixel** base code into `index.html` (placeholder comment in `<head>`), then mirror the key events:
-      `AddToCart` where `add_to_cart` fires, `InitiateCheckout` on `checkout_attempt`, `Lead` on `lead_saved`.
-- [ ] Replace the three photo placeholders in `src/components/PhotoStack.jsx` with real images (`/public/img/…`).
-- [ ] Update contact details in `Footer.jsx` / `Policies.jsx`.
-- [ ] Keep the site unlisted (no SEO push) while testimonials are illustrative.
+- [x] **Meta Pixel** — done. Set `VITE_META_PIXEL_ID`; `src/lib/pixel.js` loads it and mirrors
+      `AddToCart`, `InitiateCheckout`, `Lead` off the Supabase event stream. No base code in `index.html`.
+- [x] **Product photography** — done. `PhotoStack.jsx` renders real shots from `CATALOG[].img`
+      (`/public/products/*.webp`). No placeholders remain.
+- [x] **Legitimacy signals** — done. FSSAI Lic. `10522999000050` and legal entity **Planstalk LLP**
+      now appear in `Footer.jsx`, `TrustStrip.jsx`, `Policies.jsx`, `CartDrawer.jsx`, `Story.jsx`
+      and the `Organization` JSON-LD in `index.html`.
+- [x] **Fabricated testimonials removed.** `Testimonials.jsx` used invented customer personas with
+      made-up delivery and health outcomes — a misleading-advertising risk under India's consumer
+      protection rules, and the likeliest reason early visitors called the site untrustworthy. It now
+      shows only verifiable proof. `REVIEWS` in `data/catalog.js` is retained but unused; restore a
+      carousel only when reviews come from real verified orders.
+- Founder section: **deliberately omitted.** City-level location only (Pune, Maharashtra) — full
+      registered address is intentionally not published.
+- [ ] Optional: third-party lab report backing the 5g fiber claim — strong proof in a category full of
+      unverified numbers.
 
 ## 5 · Reading the results
 
